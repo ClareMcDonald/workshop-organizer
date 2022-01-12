@@ -9,7 +9,7 @@ export async function getWorkshops() {
         .from('workshops')
         .select(`*, workshop_participants (*)`);
     
-    return response;
+    return checkError(response);
 }
 
 
