@@ -1,6 +1,6 @@
 import { createParticipant, getWorkshops } from '../fetch-utils.js';
 
-const form = document.querySelector(form);
+const form = document.querySelector('form');
 
 window.addEventListener('load', async() => {
     const workshopDropdown = document.querySelector('select');
@@ -25,7 +25,7 @@ form.addEventListener('submit', async(e) => {
     const newParticipant = {
         name: name,
         contact_email: contact,
-        wokrshop_id: workshop,
+        workshop_id: workshop,
     };
 
     await createParticipant(newParticipant);

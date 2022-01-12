@@ -15,12 +15,20 @@ export async function getWorkshops() {
 export async function createParticipant(participant) {
     const response = await client
         .from('workshop_participants')
-        .instert(participant);
+        .insert(participant);
 
     return checkError(response);
 }
 
-
+export async function deleteParticipant(id) {
+    const reponse = await client
+        .from('workshop_participants')
+        .delete()
+        .match({ id: id })
+        .single();
+    
+    return checkError(reponse);
+}
 
 export async function getUser() {
     return client.auth.session();
