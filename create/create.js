@@ -1,4 +1,6 @@
-import { getWorkshops } from '../fetch-utils.js';
+import { createParticipant, getWorkshops } from '../fetch-utils.js';
+
+const form = document.querySelector(form);
 
 window.addEventListener('load', async() => {
     const workshopDropdown = document.querySelector('select');
@@ -11,4 +13,22 @@ window.addEventListener('load', async() => {
         optionEl.textContent = workshop.name;
         workshopDropdown.append(optionEl);
     }
+});
+
+form.addEventListener('submit', async(e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const name = data.get('name');
+    const contact = data.get('contact');
+    const workshop = data.get('workshop-dropdown');
+
+    const newParticipant = {
+        name: name,
+        contact_email: contact,
+        wokrshop_id: workshop,
+    };
+
+    await createParticipant(newParticipant);
+
+    window.location.href = '../workshops';
 });

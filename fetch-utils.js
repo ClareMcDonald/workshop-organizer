@@ -12,7 +12,13 @@ export async function getWorkshops() {
     return checkError(response);
 }
 
+export async function createParticipant(participant) {
+    const response = await client
+        .from('workshop_participants')
+        .instert(participant);
 
+    return checkError(response);
+}
 
 
 
