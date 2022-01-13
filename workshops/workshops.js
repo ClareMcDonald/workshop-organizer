@@ -39,7 +39,7 @@ async function displayWorkshops() {
 
                 await displayWorkshops();
             });
-        console.log(participant)
+
             participantsEl.append(participantEl);
         }
         
