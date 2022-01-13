@@ -129,3 +129,41 @@ footer {
 .auth-container button {
     margin: 10px;
 }
+
+form label {
+    display: block;
+}
+
+form {
+    border: solid 10px rgb(206, 161, 168);
+    border-radius: 5px;
+    padding: 40px;
+}
+
+form button {
+    background-color: rgb(206, 161, 168);
+}
+
+a {
+    font-style: italic;
+    background-color: lightsteelblue;
+    text-align: center;
+    padding: 15px;
+}
+
+.workshop {
+    border: 3px solid black;
+    width: 100%;
+    margin: 50px; 
+    padding: 15px;
+}
+
+.participant {
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.participant:hover {
+    cursor: pointer;
+    background-color: lightblue;
+}
